@@ -9,7 +9,7 @@ data:
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: data
+  name: data1
   namespace: test
 data:
   key2: "{{ .Capabilities.APIVersions.Has "v1/ConfigMap" }}"
