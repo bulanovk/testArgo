@@ -4,4 +4,4 @@ metadata:
   name: data
   namespace: test
 data:
-{{/*      key: "{{  (lookup "v1" "ConfigMap" "test" "look").metadata.name }}"*/}}
+      key: "{{  (lookup "v1" "ConfigMap" "test" "look").metadata.name }}"
