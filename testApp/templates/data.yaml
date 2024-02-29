@@ -4,5 +4,12 @@ metadata:
   name: data
   namespace: test
 data:
-{{/*      key: "{{  (lookup "v1" "ConfigMap" "test" "look").metadata.name }}"*/}}
-  key2: "{{getHostByName "www.google.com"}}"
+      key: "{{  (lookup "v1" "ConfigMap" "test" "look").metadata.name }}"
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: data
+  namespace: test
+data:
+  key2: "{{ .Capabilities.APIVersions.Has "v1/ConfigMap" }}"
